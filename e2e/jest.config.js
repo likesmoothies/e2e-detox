@@ -10,9 +10,9 @@ module.exports = {
       'jest-html-reporters',
       {
         publicPath: './test-reports', 
-        filename: 'test-detox-test-report.html', 
+        filename: 'detox-test-report.html', 
         expand: true,
-        pageTitle: 'Test Detox Test Report',
+        pageTitle: 'Detox Test Report',
       },
     ]],
   testEnvironment: 'detox/runners/jest/testEnvironment',
