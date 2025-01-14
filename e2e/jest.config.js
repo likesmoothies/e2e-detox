@@ -16,5 +16,5 @@ module.exports = {
       },
     ]],
   testEnvironment: 'detox/runners/jest/testEnvironment',
-  verbose: true,
+  verbose: false,
 };

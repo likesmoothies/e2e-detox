@@ -73,7 +73,13 @@ module.exports = {
     },
     'android.emu.debug': {
       device: 'emulator',
-      app: 'android.debug'
+      app: 'android.debug',
+//      logger: {
+//          level: 'warn',
+//          options: {
+//            showDate: (date) => date.toISOString(),
+//          }
+//        }
     },
     'android.emu.release': {
       device: 'emulator',

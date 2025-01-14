@@ -9,13 +9,9 @@ describe('Onboarding Process', () => {
   });
 
   it('should display the first slide and navigate to next slide', async () => {
-    await expect(
-      element(by.text('Grab all events now only in your hands')),
-    ).toBeVisible();
+    await expect(element(by.text('Grab all events now only in your hands'))).toBeVisible();
     await element(by.text('Next')).tap();
-    await expect(
-      element(by.text('Easy payment & fast event ticket')),
-    ).toBeVisible();
+    await expect(element(by.text('Easy payment & fast event ticket'))).toBeVisible();
   });
 
   it('should navigate to login screen on third slide', async () => {
@@ -32,12 +28,12 @@ describe('Onboarding Process', () => {
           .withTimeout(5000);
     await element(by.id('OnboardingScreen')).swipe('left');
     await expect(
-          element(by.text('Easy payment & fast event ticket')),
-        ).toBeVisible();
+          element(by.text('Easy payment & fast event ticket')))
+          .toBeVisible();
     await element(by.id('OnboardingScreen')).swipe('right');
     await expect(
-          element(by.text('Grab all events now only in your hands')),
-        ).toBeVisible();
+          element(by.text('Grab all events now only in your hands')))
+          .toBeVisible();
   });
 
   it('should navigate the slide with swipe gesture untul login screen', async () => {
@@ -50,14 +46,13 @@ describe('Onboarding Process', () => {
                 element(by.text('Easy payment & fast event ticket')),
               ).toBeVisible();
       await element(by.id('OnboardingScreen')).swipe('left','fast');
-      // Debugging: Log a message before waiting for the login button
       console.log("Waiting for the Login button to be visible...");
       try {
           await waitFor(element(by.text('Login'))).toBeVisible().withTimeout(5000);
           console.log("Login button is visible!");
       } catch (error) {
           console.error("Error waiting for Login button:", error);
-          throw error; // Re-throw the error to fail the test
+          throw error;
       }
       await element(by.text('Login')).tap();
       await waitFor(element(by.id('LoginScreen'))).toBeVisible().withTimeout(5000)
