@@ -10,6 +10,7 @@
     "test": "jest",
     "clean:detox_report":"rm -rf ./test-reports",
     "detox:android_build": "detox build --configuration android.emu.debug",
+    "detox:android_test_cli": "npm run clean:detox_report && detox test --configuration android.emu.debug 2>&1 | grep --color=always -v 's_glBindAttribLocation'",
     "detox:android_test": "npm run clean:detox_report && detox test --configuration android.emu.debug"
   },
   "dependencies": {
