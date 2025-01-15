@@ -1,29 +1,31 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://wix.github.io/Detox/docs/introduction/environment-setup) instructions
 
-## Step 1: Start the Metro Server
+## Step 1: Setup project
+
+```bash
+~ git clone https://github.com/likesmoothies/e2e-detox.git
+~ cd e2e-detox
+~ npm install
+```
+
+## Step 2: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
 To start Metro, run the following command from the _root_ of your React Native project:
-
 ```bash
 # using npm
 npm start
-
 # OR using Yarn
 yarn start
 ```
 
-## Step 2: Start your Application
+## Step 3: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
 ### For Android
-
 ```bash
 # using npm
 npm run android
@@ -44,34 +46,33 @@ yarn ios
 
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Step 4: Running Detox Tests
 
-## Step 3: Modifying your App
+Detox is a End-to-End framework focused in mobile applications, in this case it's being used to run tests for a React Native application.
 
-Now that you have successfully run the app, let's modify it.
+In order to run the tests, first you need to compile the application:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+```bash
+~ npm run detox:android_build
+```
+After the detox completed the build then can running the test:
+```bash
+~ npm run detox:android_test
+```
+https://github.com/user-attachments/assets/17191c72-69f0-49c9-955f-95dd519e4670
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Detox Test Report
+![image](https://github.com/user-attachments/assets/d6ad2362-04e0-4f1d-a453-06bc68cc6ed9)
 
-## Congratulations! :tada:
+Below is the log included in the failed report:
+![Screenshot 2025-01-15 at 20 27 58](https://github.com/user-attachments/assets/99ded2cd-6333-45d8-ac50-c5f095de0afc)
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
 # Learn More
 
-To learn more about React Native, take a look at the following resources:
+To learn more about React Native and Detox, take a look at the following resources:
 
+- [Detox Documentaion](https://wix.github.io/Detox/docs/guide/test-id) - Learn more about Detox End to End Test
 - [React Native Website](https://reactnative.dev) - learn more about React Native.
 - [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
