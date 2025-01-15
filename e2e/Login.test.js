@@ -54,7 +54,6 @@ describe('Login Screen', () => {
 
   it('Email valid error Message should be appear if email is invalid', async () => {
       await element(by.id('email')).typeText('andi@mercari');
-//      await element(by.id('password')).typeText('pass');
       await device.pressBack();
       await element(by.id('Login')).tap();
       await expect(element(by.text('Please enter a valid email'))).toBeVisible();
@@ -63,10 +62,15 @@ describe('Login Screen', () => {
   it('Success Login with valid email and password', async () => {
       await element(by.id('email')).clearText();
       await element(by.id('email')).typeText('andi@mercari.com');
-//      await element(by.id('password')).typeText('pass');
       await device.pressBack();
       await element(by.id('Login')).tap();
       await expect(element(by.text('Testing Complete'))).toBeVisible();
   });
+
+  it('Failed cases to show the artifacts', async () => {
+        await device.pressBack();
+        await element(by.id('Login')).tap();
+        await expect(element(by.text('Testing Completeaa'))).toBeVisible();
+    });
 
 });

@@ -74,16 +74,35 @@ module.exports = {
     'android.emu.debug': {
       device: 'emulator',
       app: 'android.debug',
-//      logger: {
-//          level: 'warn',
-//          options: {
-//            showDate: (date) => date.toISOString(),
-//          }
-//        }
     },
     'android.emu.release': {
       device: 'emulator',
       app: 'android.release'
     }
-  }
+  },
+   artifacts: {
+      rootDir: 'artifacts', // Directory where artifacts will be stored
+      plugins: {
+        log: {
+          enabled: true,
+          keepOnlyFailedTestsArtifacts: true,
+        },
+        screenshot: {
+          enabled: true,
+          keepOnlyFailedTestsArtifacts: true,
+        },
+        video: {
+          enabled: true,
+          keepOnlyFailedTestsArtifacts: true,
+        },
+        instruments: {
+          enabled: false,
+          keepOnlyFailedTestsArtifacts: true,
+        },
+        timeline: {
+          enabled: false,
+          keepOnlyFailedTestsArtifacts: true,
+        }
+      }
+    }
 };
