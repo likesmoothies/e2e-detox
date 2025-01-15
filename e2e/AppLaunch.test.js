@@ -1,10 +1,6 @@
 describe('App Launch', () => {
   beforeAll(async () => {
-    await device.launchApp();
-  });
-
-  beforeEach(async () => {
-    await device.reloadReactNative();
+    await device.launchApp({ newInstance: false });
   });
 
   it('logo image should appear on splash screen', async () => {
