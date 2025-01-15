@@ -8,10 +8,11 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "clean:detox_report":"rm -rf ./test-reports",
+    "clean:detox_report":"rm -rf ./artifacts",
+    "clean:detox_artifacts":"rm -rf ./test-reports",
     "detox:android_build": "detox build --configuration android.emu.debug",
     "detox:android_test_cli": "npm run clean:detox_report && detox test --configuration android.emu.debug 2>&1 | grep --color=always -v 's_glBindAttribLocation'",
-    "detox:android_test": "npm run clean:detox_report && detox test --configuration android.emu.debug"
+    "detox:android_test": "npm run clean:detox_report && npm run clean:detox_artifacts  && detox test --configuration android.emu.debug"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.6.1",
