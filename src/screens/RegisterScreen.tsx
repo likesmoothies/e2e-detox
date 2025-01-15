@@ -86,6 +86,7 @@ const RegisterScreen: React.FC = () => {
       <CustomHeading title="Sign Up" />
       <View style={styles.inputContainer}>
         <Input
+          testID="FirstNameInput"
           value={inputs.first_name}
           onChangeText={(text) => handleOnChange(text, "first_name")}
           onFocus={() => handleError(null, "first_name")}
@@ -93,6 +94,7 @@ const RegisterScreen: React.FC = () => {
           error={errors.first_name}
         />
         <Input
+          testID="LastNameInput"
           value={inputs.last_name}
           onChangeText={(text) => handleOnChange(text, "last_name")}
           onFocus={() => handleError(null, "last_name")}
@@ -100,6 +102,7 @@ const RegisterScreen: React.FC = () => {
           error={errors.last_name}
         />
         <Input
+          testID="Email"
           value={inputs.email}
           onChangeText={(text) => handleOnChange(text, "email")}
           onFocus={() => handleError(null, "email")}
@@ -107,6 +110,7 @@ const RegisterScreen: React.FC = () => {
           error={errors.email}
         />
         <Input
+          testID="Password"
           value={inputs.password}
           onChangeText={(text) => handleOnChange(text, "password")}
           onFocus={() => handleError(null, "password")}
