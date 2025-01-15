@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "clean:detox_report":"rm -rf ./artifacts",
+    "clean:detox_artifacts":"rm -rf ./test-reports",
+    "detox:android_build": "detox build --configuration android.emu.debug",
+    "detox:android_test_cli": "npm run clean:detox_report && detox test --configuration android.emu.debug 2>&1 | grep --color=always -v 's_glBindAttribLocation'",
+    "detox:android_test": "npm run clean:detox_report && npm run clean:detox_artifacts  && detox test --configuration android.emu.debug"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.6.1",
@@ -50,8 +55,10 @@
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
+    "detox": "^20.32.0",
     "eslint": "^8.19.0",
-    "jest": "^29.6.3",
+    "jest": "^29.7.0",
+    "jest-html-reporters": "^3.1.7",
     "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
