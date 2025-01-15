@@ -81,7 +81,7 @@ module.exports = {
     }
   },
    artifacts: {
-      rootDir: 'artifacts', // Directory where artifacts will be stored
+      rootDir: 'artifacts',
       plugins: {
         log: {
           enabled: true,

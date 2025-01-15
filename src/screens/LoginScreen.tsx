@@ -92,7 +92,7 @@ const LoginScreen: React.FC = () => {
         />
         <CustomButton
           title="Login"
-          testID="Login"
+          testID="loginButton"
           loading={loading}
           onPress={loginHandler}
         />
