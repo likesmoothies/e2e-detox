@@ -4,12 +4,12 @@ describe('App Launch', () => {
   });
 
   it('logo image should appear on splash screen', async () => {
-    await expect(element(by.id('logo-image'))).toBeVisible();
-    await expect(element(by.id('loading-indicator'))).toBeVisible();
+    await expect(element(by.id('logoImage'))).toBeVisible();
+    await expect(element(by.id('loadingIndicator'))).toBeVisible();
   });
 
   it('loading indicator should appear on splash screen', async () => {
-    await expect(element(by.id('loading-indicator'))).toBeVisible();
+    await expect(element(by.id('loadingIndicator'))).toBeVisible();
   });
 
 });

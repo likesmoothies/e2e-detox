@@ -19,7 +19,7 @@ const SplashScreen: FC = () => {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image
-          testID='logo-image'
+          testID='logoImage'
           source={logo}
           style={[
             {
@@ -31,7 +31,7 @@ const SplashScreen: FC = () => {
         />
       </View>
       <View style={{ marginBottom: 40 }}>
-        <ActivityIndicator size={'large'} testID='loading-indicator' />
+        <ActivityIndicator size={'large'} testID='loadingIndicator' />
       </View>
     </View>
   );

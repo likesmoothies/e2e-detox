@@ -3,7 +3,7 @@ const { device, expect, element, by } = require('detox');
 describe('Onboarding Process', () => {
   beforeAll(async () => {
     await device.launchApp({ newInstance: true });
-    await waitFor(element(by.id('OnboardingScreen')))
+    await waitFor(element(by.id('onboardingScreen')))
       .toBeVisible()
       .withTimeout(5000);
   });
@@ -22,13 +22,13 @@ describe('Onboarding Process', () => {
 
   it('should navigate the slide with swipe gesture to next and previous slide', async () => {
      await device.pressBack()
-     await waitFor(element(by.id('OnboardingScreen')))
+     await waitFor(element(by.id('onboardingScreen')))
           .toBeVisible()
           .withTimeout(5000);
-    await element(by.id('OnboardingScreen')).swipe('right');
+    await element(by.id('onboardingScreen')).swipe('right');
     await expect(element(by.text('Easy payment & fast event ticket')))
           .toBeVisible();
-    await element(by.id('OnboardingScreen')).swipe('left');
+    await element(by.id('onboardingScreen')).swipe('left');
     await expect(element(by.text("Let's go to your favourite event now")))
           .toBeVisible();
     console.log("Waiting for the Login button to be visible...");
@@ -42,9 +42,9 @@ describe('Onboarding Process', () => {
   });
 
   it('should navigate through the slides using swipe gestures until the login screen appears', async () => {
-      await element(by.id('OnboardingScreen')).swipe('right');
+      await element(by.id('onboardingScreen')).swipe('right');
       await expect(element(by.text('Easy payment & fast event ticket'))).toBeVisible();
-      await element(by.id('OnboardingScreen')).swipe('right','fast');
+      await element(by.id('onboardingScreen')).swipe('right','fast');
       await expect(element(by.text('Grab all events now only in your hands'))).toBeVisible();
 
   });
